@@ -19,14 +19,15 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Set SDK location in local.properties
-      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
-        
+    - name: Generate local.properties
+      run: |
+        echo "sdk.dir=/usr/local/lib/android/sdk" > local.properties
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
     - name: Build APK
-      run: ./gradlew assembleDebug --stacktrace
+      run: ./gradlew assembleDebug
       
     - name: Upload APK
       uses: actions/upload-artifact@v4
