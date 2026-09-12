@@ -49,14 +49,14 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         statusText = TextView(this).apply {
             text = "GLYPH RUNNER 1D\n\nSecoue le téléphone pour sauter !"
-            textColor = 0xFFFFFFFF.toInt()
+            setTextColor(0xFFFFFFFF.toInt())
             textSize = 20f
             textAlignment = android.view.View.TEXT_ALIGNMENT_CENTER
         }
 
         scoreText = TextView(this).apply {
             text = "Score : 0"
-            textColor = 0xFFFF0000.toInt()
+            setTextColor(0xFFFF0000.toInt())
             textSize = 28f
             setPadding(0, 32, 0, 32)
         }
